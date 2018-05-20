@@ -13,10 +13,10 @@ module.exports = {
   entry: [
     'babel-polyfill',
     './src/js/index.js',
-    './src/scss/main.scss'
+    './src/scss/main.scss',
   ],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: 'bundle.js',
   },
   module: {
@@ -87,7 +87,7 @@ module.exports = {
       template: 'src/index.html',
     }),
     // new CopyWebpackPlugin([{ from: 'src/vendors/mdb/mdb-addons', to: 'mdb-addons' }]),
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['docs']),
   ],
   devtool: 'source-map',
   target: 'web',
