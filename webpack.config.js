@@ -88,6 +88,10 @@ module.exports = {
       filename: '../index.html',
       inject: true,
     }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      inject: true,
+    }),
     // new CopyWebpackPlugin([{ from: 'src/vendors/mdb/mdb-addons', to: 'mdb-addons' }]),
     new CleanWebpackPlugin(['dist']),
   ],
