@@ -16,7 +16,7 @@ module.exports = {
     './src/scss/main.scss',
   ],
   output: {
-    path: path.resolve(__dirname),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   module: {
@@ -85,9 +85,11 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
+      filename: '../index.html',
+      inject: true,
     }),
     // new CopyWebpackPlugin([{ from: 'src/vendors/mdb/mdb-addons', to: 'mdb-addons' }]),
-    new CleanWebpackPlugin(['docs']),
+    new CleanWebpackPlugin(['dist']),
   ],
   devtool: 'source-map',
   target: 'web',
